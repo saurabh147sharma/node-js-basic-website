@@ -1,7 +1,9 @@
 # Node js basic website
 
+# Points covered
 1) Routing
 2) EJS view engine
+3) How to use partials
 
 
 # How to use EJS in Express
