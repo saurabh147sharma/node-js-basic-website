@@ -5,10 +5,19 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// DB connection
+var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/my_database')
+  .then(() =>  console.log('connection succesful'))
+  .catch((err) => console.error(err));
+  // DB connection end
+
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var about = require('./routes/about');
-var contact = require('./routes/contact');
+var post = require('./routes/post');
 
 var app = express();
 
@@ -27,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/about', about);
-app.use('/contact', contact);
+app.use('/post', post);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
