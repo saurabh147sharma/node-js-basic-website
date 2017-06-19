@@ -4,6 +4,7 @@
 1) Routing
 2) EJS view engine
 3) How to use partials
+4) Mongoose with Node Js 
 
 
 # How to use EJS in Express
